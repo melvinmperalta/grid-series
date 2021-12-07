@@ -20,7 +20,7 @@ poly <- function(l) {
           xmin + ratio + rnorm(1, 0, r), xmin + rnorm(1, 0, r)),
     y = c(ymin + rnorm(1, 0, r), ymin + rnorm(1, 0, r), 
           ymin + 1 + rnorm(1, 0, r), ymin + 1 + rnorm(1, 0, r)),
-    v = sample(1:4, 1)
+    v = sample(1:5, 1)
   )
   return(dt)
 }
@@ -34,7 +34,7 @@ poly2 <- function (l) {
           xmin + ratio*0.4 + rnorm(1, 0, r), xmin + rnorm(1, 0, r)),
     y = c(ymin + rnorm(1, 0, r), ymin + rnorm(1, 0, r), 
           ymin + 0.4 + rnorm(1, 0, r), ymin + 0.4 + rnorm(1, 0, r)),
-    v = sample(1:4, 1)
+    v = sample(1:5, 1)
   )
   return(dt)
 }
