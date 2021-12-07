@@ -7,14 +7,14 @@ library(ambient)
 ratio <- 1.2
 data <- list(
   x = seq(0, 10*ratio, by = ratio),
-  y = seq(0, 8)
+  y = seq(0, 10)
 )
 
 #create polygon functions
 poly <- function(l) {
   xmin = l[[1]]
   ymin = l[[2]]
-  r = normalize(ymin, from = range(data[[2]]), to = c(0, 0.1))
+  r = normalize(ymin, from = range(data[[2]]), to = c(0, 0.13))
   dt <- data.frame(
     x = c(xmin + rnorm(1, 0, r), xmin + ratio + rnorm(1, 0, r), 
           xmin + ratio + rnorm(1, 0, r), xmin + rnorm(1, 0, r)),
@@ -28,7 +28,6 @@ poly <- function(l) {
 poly2 <- function (l) {
   xmin = l[[1]] + 0.33
   ymin = l[[2]] + 0.33
-  #r = normalize(l[[2]], from = range(data[[2]]), to = c(0.08, 0))
   r = 0.01
   dt <- data.frame(
     x = c(xmin + rnorm(1, 0, r), xmin + ratio*0.4 + rnorm(1, 0, r), 
@@ -55,5 +54,5 @@ ggplot() +
                color = "black", size = 1.2) +
   geom_polygon(data = df2, aes(x = x, y = y, fill = v, group = g),
                color = "black", size = 0.1) +
-  scale_fill_gradientn(colors = cpalette) + coord_equal() + theme_void() +
+  scale_fill_gradientn(colors = cpalette) + coord_equal() +theme_void() +
   theme(legend.position = "none")
