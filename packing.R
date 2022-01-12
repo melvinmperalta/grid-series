@@ -16,9 +16,6 @@ grid <- data.frame(x = runif(500, 0, 10),
 tessalation <- deldir(grid$x, grid$y)
 tiles <- tile.list(tessalation)
 
-#remove borders
-tiles <- Filter(function(x) !(TRUE %in% x$bp), tiles)
-
 #get centroids
 centroids <- tile.centroids(tiles)
 centroids_list <- split(centroids, seq(nrow(centroids)))
